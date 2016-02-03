@@ -38,6 +38,14 @@ ALLOWED_HOSTS = [
     #'www.example.com', # Second DNS alias (set up in the app)
 ]
 
+class IPList(list):
+    def __init__(self):
+        pass
+
+    def __contains__(self, item):
+        return True
+
+INTERNAL_IPS = IPList()
 
 # Application definition
 
