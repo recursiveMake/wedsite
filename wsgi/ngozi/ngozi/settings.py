@@ -34,18 +34,8 @@ from socket import gethostname
 ALLOWED_HOSTS = [
     gethostname(), # For internal OpenShift load balancer security purposes.
     os.environ.get('OPENSHIFT_APP_DNS'), # Dynamically map to the OpenShift gear name.
-    #'example.com', # First DNS alias (set up in the app)
-    #'www.example.com', # Second DNS alias (set up in the app)
+    'ngozi-bcdf.rhcloud.com'
 ]
-
-class IPList(list):
-    def __init__(self):
-        pass
-
-    def __contains__(self, item):
-        return True
-
-INTERNAL_IPS = IPList()
 
 # Application definition
 
