@@ -1,7 +1,7 @@
 import json
 
 __secrets = {
-    'secret_key': 'a',
+    'secret_key': 'this is not really a secret',
 }
 
 def getter(path):
