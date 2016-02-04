@@ -21,6 +21,8 @@
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,25 +38,32 @@
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-heart-o"></i>
+            </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#details">Details</a>
+                        <a class="page-scroll" href="#details"><i class="fa fa-calendar fa-fw"></i> Details</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#rsvp">RSVP</a>
+                        <a class="page-scroll" href="#rsvp"><i class="fa fa-envelope fa-fw"></i> RSVP</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#registry">Registry</a>
+                        <a class="page-scroll" href="#registry"><i class="fa fa-shopping-bag fa-fw"></i> Registry</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#email">Email</a>
+                        <a class="page-scroll" href="#map"><i class="fa fa-map-o fa-fw"></i> Map</a>
                     </li>
                 </ul>
             </div>
@@ -69,10 +78,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">{{ title }}</h1>
+                        <h1 class="brand-heading"><strong>Ngozi</strong><br>and<br><strong>Adonis</strong></h1>
                         <p class="intro-text">Please share this moment with us.</p>
                         <a href="#details" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down fa-inverse animated"></i>
+                            <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
                 </div>
@@ -80,67 +89,73 @@
         </div>
     </header>
 
-    <!-- Details Section -->
+    <!-- About Section -->
     <section id="details" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Details</h2>
+                <h2 class="section-heading">Details</h2>
                 <p>You are invited to our wedding on May 28, 2016</p>
                 <p>St. Bartholomew's Episcopal Church</p>
-                <p>1790 LaVista Rd NE, Atlanta, GA 30329</p>
+                <p>1790 LaVista Rd NE, Atlanta, GA 30329 <a href="#map" class="page-scroll"> <i class="fa fa-map-o animated"></i></a></p>
                 <p>WEDDING 3:00 PM</p>
                 <p>RECEPTION 6:00 PM</p>
             </div>
         </div>
     </section>
 
-    <!-- RSVP Section -->
-    <section id="rsvp" class="container content-section text-center rsvp-section">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>RSVP</h2>
-                <p>Please let us know if you will be able to attend</p>
+    <!-- Download Section -->
+    <section id="rsvp" class="content-section text-center">
+        <div class="picture-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">RSVP</h2>
+                    <p>Please let us know if you will be able to attend.</p>
+                    <p>Bootstrap Form</p>
+                    <p>ReCAPTCHA</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Registry Section -->
+    <!-- Contact Section -->
     <section id="registry" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Registry</h2>
-                <p>We are registered at the following stores</p>
-                <p>Amazon</p>
-                <p>Bed Bath &amp; Beyond</p>
+                <h2 class="section-heading">Registry</h2>
+                <p>We are registered at the following stores.</p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://www.amazon.com" class="btn btn-default btn-lg"><i class="fa fa-amazon fa-fw"></i> <span class="network-name">Amazon</span></a>
+                    </li>
+                    <li>
+                        <a href="http://www.bedbathbeyond.com" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Bed, Bath &amp; Beyond</span></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Email Section -->
-    <section id="email" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Email</h2>
-                <p><a href="mailto:{{ email }}">{{ email }}</a></p>
-            </div>
-        </div>
-    </section>
+    <!-- Map Section -->
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; {{title}} 2016</p>
+            <p class="muted">Copyright &copy; {{title}} 2016</p>
         </div>
     </footer>
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="{% static 'js/jquery-1.11.0.js' %}"></script>
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
     <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'js/grayscale.js' %}"></script>
