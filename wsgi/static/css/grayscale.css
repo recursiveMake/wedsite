@@ -277,7 +277,7 @@ a:focus {
 .picture-section {
     width: 100%;
     padding: 50px 0;
-    color: #eee;
+    /*color: #eee;*/
     background: url(../images/ngozi-adonis-1.jpg) no-repeat center center scroll;
     background-color: #111;
 
