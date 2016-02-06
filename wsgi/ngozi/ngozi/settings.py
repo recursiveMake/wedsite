@@ -28,7 +28,8 @@ SECRETS = secrets.getter(os.path.join(DATA_DIR, 'secrets.json'))
 SECRET_KEY = SECRETS['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+PRODUCTION = True if os.environ.get('OPENSHIFT_DATA_DIR') else False
+DEBUG = not PRODUCTION
 
 from socket import gethostname
 ALLOWED_HOSTS = [
@@ -113,3 +114,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
+if DEBUG:
+    STATIC_ROOT = '/static'
+    STATICFILES_DIRS = [os.path.join(WSGI_DIR, 'static'), ]

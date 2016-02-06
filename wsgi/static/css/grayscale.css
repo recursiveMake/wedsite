@@ -173,6 +173,10 @@ a:focus {
     font-size: 36px;
 }
 
+.heading-text {
+    padding-top: 100px;
+}
+
 .intro .intro-body .intro-text {
     font-size: 18px;
 }
@@ -193,6 +197,10 @@ a:focus {
 
     .intro .intro-body .intro-text {
         font-size: 26px;
+    }
+
+    .heading-text {
+        padding-top: 0px;
     }
 }
 
@@ -276,15 +284,18 @@ a:focus {
 
 .picture-section {
     width: 100%;
-    padding: 50px 0;
+    /* padding: 250px 0;*/
     /*color: #eee;*/
-    background: url(../images/ngozi-adonis-1.jpg) no-repeat center center scroll;
-    background-color: #111;
+    background-image: url(../images/ngozi-adonis-1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-color: #fefefe;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
 }
 
 .panel-background {
@@ -301,6 +312,11 @@ a:focus {
     background: rgba(255,255,255,0.5);
 }
 
+.panel-spacer {
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
 #map {
     width: 100%;
     height: 200px;
@@ -314,6 +330,11 @@ a:focus {
 
     .download-section {
         padding: 100px 0;
+    }
+
+    .panel-spacer {
+        margin-top: 50px;
+        margin-bottom: 200px;
     }
 
     #map {
