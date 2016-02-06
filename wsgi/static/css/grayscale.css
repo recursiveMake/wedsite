@@ -9,7 +9,8 @@ body {
     height: 100%;
     font-family: 'Lora',"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #111;
-    background-color: #ddd;
+    /*background-color: #ddd;*/
+    background: url(../images/bg-rpt-blue.jpg) repeat;
 }
 
 html {
@@ -66,7 +67,8 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #ddd;
+    /*background-color: #ddd;*/
+    background-color: #cde2e9;
 }
 
 .navbar-custom .navbar-brand {
@@ -141,7 +143,8 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #ddd;
+        /*background-color: #ddd;*/
+        background-color: #cde2e9;
     }
 }
 
@@ -153,7 +156,8 @@ a:focus {
     text-align: center;
     color: #111;
     background: url(../images/ngozi-adonis.jpg) no-repeat bottom center scroll;
-    background-color: #ddd;
+    /*background-color: #ddd;*/
+    background-color: #cde2e9;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
