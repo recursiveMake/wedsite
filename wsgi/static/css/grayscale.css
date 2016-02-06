@@ -68,7 +68,8 @@ a:focus {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     /*background-color: #ddd;*/
-    background-color: #cde2e9;
+    background: url(../images/navbar-bg.jpg) repeat;
+    /*background-color: #cde2e9;*/
 }
 
 .navbar-custom .navbar-brand {
@@ -143,8 +144,9 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        /*background-color: #ddd;*/
-        background-color: #cde2e9;
+        /*background-color: #ddd;
+        background-color: #cde2e9;*/
+        background: url(../images/navbar-bg.jpg) repeat;
     }
 }
 
