@@ -1,0 +1,28 @@
+<!-- RSVP Modal -->
+<div class="modal fade" id="rsvp-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLabel">RSVP</h4>
+      </div>
+      <div class="modal-body">
+        <p id="rsvp-form-invitation">Please let us know if you will be able to attend.</p>
+        <form id="rsvp-form" class="form-horizontal" action="#rsvp-form" method="post">
+            {% csrf_token %}
+            {{ rsvp_form }}
+            <div class="form-group">
+              <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-success"
+                        value="rsvp"
+                        onclick="submit_rsvp(arguments[0] || window.event, '{% url 'rsvp' %}')">RSVP
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

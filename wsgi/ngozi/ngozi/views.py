@@ -1,5 +1,7 @@
 from django.core.mail import send_mail
+from django.http import JsonResponse
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
@@ -22,15 +24,25 @@ def rsvp(request):
         form = RsvpForm(request.POST)
         if form.is_valid():
             rsvp = form.save()
-            message = "%s\n%s\nGuests: %s\n%s" % (rsvp.name, rsvp.email, rsvp.guests, rsvp.message)
+            message = "%s\n%s\nGuests: %s (adults), %s (children)\n%s" % (
+                rsvp.name, rsvp.email, rsvp.adult_guests, rsvp.child_guests, rsvp.message
+            )
             send_mail(
                 subject='RSVP',
                 message=message,
                 from_email='www-data@ngozi-adonis.com',
                 recipient_list=['adonis.ngozi@gmail.com']
             )
-            return TemplateResponse(request, 'ngozi/contact.html', {})
+            response = {
+                'success': True,
+                'data': render_to_string('ngozi/contact.html', context={}, request=request)
+            }
+            return JsonResponse(response)
     else:
         form = RsvpForm()
-    context = {'form': form}
-    return TemplateResponse(request, 'ngozi/rsvp.html', context)
+    context = {'rsvp_form': form}
+    response = {
+        'success': False,
+        'data': render_to_string('ngozi/modal.html', context=context, request=request)
+    }
+    return JsonResponse(response)

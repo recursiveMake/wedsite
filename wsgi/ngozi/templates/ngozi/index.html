@@ -98,7 +98,11 @@
             <div class="col-lg-6 col-lg-offset-3">
                 <div class="panel-background">
                     <h2 class="section-heading">Details</h2>
-                    <p>You are invited to our wedding on</p>
+                    <p>Chief and Mrs. Eric Okafor</p>
+                    <p>and</p>
+                    <p>Ms. Adonia Bovell and Mr. Allan Winchester</p>
+                    <p>cordially invite you to the marriage of our children</p>
+                    <p>Ngozi and Adonis</p>
                     <p>May 28, 2016</p>
                     <p>St. Bartholomew's Episcopal Church<br>
                     1790 LaVista Rd NE, Atlanta, GA 30329 <a href="#map" class="page-scroll"> <i class="fa fa-map-o animated"></i></a></p>
@@ -115,13 +119,15 @@
             <div class="container">
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="panel-background panel-transparent panel-spacer">
-                        <h2 class="section-heading">RSVP</h2>
-                        <p>Please let us know if you will be able to attend.</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="#rsvp" class="btn btn-default btn-lg"><span class="network-name">RSVP</span></a>
-                            </li>
-                        </ul>
+                        <div id="rsvp-div">
+                            <h2 class="section-heading">RSVP</h2>
+                            <p>Please let us know if you will be able to attend.</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a onclick="display_rsvp_modal()" class="btn btn-default btn-lg"><span class="network-name">RSVP</span></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,6 +181,8 @@
 
     <!-- api JavaScript -->
     <script src="{% static 'js/api.js' %}"></script>
+
+    {% include 'ngozi/modal.html' %}
 </body>
 
 </html>
