@@ -19,10 +19,10 @@ class GuestCount(object):
     )
 
 
-class Rsvp(models):
+class Rsvp(models.Model):
     name = CharField(max_length=128)
     email = EmailField()
-    adult_guests = CharField(max_length=1, choices=GuestCount.COUNTS, default=GuestCount.TWO)
-    child_guests = CharField(max_length=1, choices=GuestCount.COUNTS, default=GuestCount.NONE)
+    adult_guests = CharField(max_length=1, choices=GuestCount.COUNTS, default=GuestCount.TWO, verbose_name='Adult Guests')
+    child_guests = CharField(max_length=1, choices=GuestCount.COUNTS, default=GuestCount.NONE, verbose_name='Children')
     entered = DateTimeField(auto_now_add=True)
-    message = TextField(max_length=4096)
+    message = TextField(max_length=4096, blank=True, null=True)

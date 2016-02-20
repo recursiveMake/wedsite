@@ -1,0 +1,36 @@
+{% load widget_tweaks %}
+
+{% with form=rsvp_form %}
+    <form id="rsvp-form" class="form-horizontal" action="#rsvp-form" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% for field in form %}
+            <div class="form-group{% if field.errors %} has-error{% endif %}">
+                <label for="{{ field.id_for_label }}" class="col-sm-4 control-label"><p>{{ field.label }}</p></label>
+                <div class="col-sm-8">
+                    {{ field|add_class:"form-control"|add_error_class:"has-error" }}
+                    {% if field.errors %}
+                        <span class="help-block">
+                        {% for error in field.errors %}
+                            {{ error }}<br>
+                        {% endfor %}
+                        {{ field.help_text }}
+                        </span>
+                    {% else %}
+                        <span class="help-block">{{ field.help_text }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-success"
+                        value="rsvp"
+                        onclick="submit_rsvp(arguments[0] || window.event, '{% url 'rsvp' %}')">RSVP
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+        </div>
+    </form>
+{% endwith %}

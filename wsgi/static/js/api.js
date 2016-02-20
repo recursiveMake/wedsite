@@ -34,23 +34,29 @@ $.ajaxSetup({
 });
 
 function submit_rsvp(event, api_url) {
+    console.warn('Submitting...');
     event.stopPropagation();
+    var form_data = $('#rsvp-form').serialize();
     $.ajax({
         method: "POST",
         url: api_url,
-        data: { 'data': null },
+        data: form_data,
         success: function(returned_data, status_text, jqXHR_object) {
-            var response = JSON.parse(returned_data);
+            console.warn('AJAX request successful');
+            var response = returned_data;
             if ( response.success ) {
-                $( '#rsvp-div' ).replaceWith( response.data );
+                console.warn('Response success');
+                $( '#rsvp-div' ).html( response.data );
                 $( '#rsvp-modal' ).modal('hide');
             }
             else {
-                $( '#rsvp-form').replaceWith( returned_data );
+                console.warn('Response failed');
+                $( '#rsvp-form').html( returned_data.data );
             }
         },
         error: function(jqXHR_object, status_text, error_thrown) {
-            $( '#rsvp-form-invitation' ).replaceWith("<p>An unknown error occurred. Please try again.</p>");
+            console.warn('AJAX request failed');
+            $( '#rsvp-form-invitation' ).html("<p id='rsvp-form-invitation'>An unknown error occurred. Please try again.</p>");
         },
         timeout: 5000
     });

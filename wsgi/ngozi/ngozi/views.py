@@ -12,7 +12,8 @@ from ngozi.forms import RsvpForm
 def index(request):
     context = {
         'title': 'Ngozi and Adonis',
-        'email': 'adonis@gmail.com'
+        'email': 'adonis@gmail.com',
+        'rsvp_form': RsvpForm()
     }
     return render(request, 'ngozi/index.html', context)
 
@@ -27,12 +28,15 @@ def rsvp(request):
             message = "%s\n%s\nGuests: %s (adults), %s (children)\n%s" % (
                 rsvp.name, rsvp.email, rsvp.adult_guests, rsvp.child_guests, rsvp.message
             )
-            send_mail(
-                subject='RSVP',
-                message=message,
-                from_email='www-data@ngozi-adonis.com',
-                recipient_list=['adonis.ngozi@gmail.com']
-            )
+            try:
+                send_mail(
+                    subject='RSVP',
+                    message=message,
+                    from_email='www-data@ngozi-adonis.com',
+                    recipient_list=['adonis.ngozi@gmail.com']
+                )
+            except Exception as e:
+                print e
             response = {
                 'success': True,
                 'data': render_to_string('ngozi/contact.html', context={}, request=request)
@@ -43,6 +47,6 @@ def rsvp(request):
     context = {'rsvp_form': form}
     response = {
         'success': False,
-        'data': render_to_string('ngozi/modal.html', context=context, request=request)
+        'data': render_to_string('ngozi/form.html', context=context, request=request)
     }
     return JsonResponse(response)
