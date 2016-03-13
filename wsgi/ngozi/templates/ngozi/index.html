@@ -1,160 +1,24 @@
-{% load staticfiles %}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ngozi and Adonis tie the knot">
-    <meta name="author" content="">
-
-    <title>{{ title }}</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="{% static 'css/grayscale.css' %}" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="{% static 'images/rose.png' %}" />
-</head>
+{% include 'ngozi/headers.html' %}
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-heart-o"></i>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#details"><i class="fa fa-calendar fa-fw"></i> Details</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#rsvp"><i class="fa fa-envelope fa-fw"></i> RSVP</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#registry"><i class="fa fa-shopping-bag fa-fw"></i> Registry</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#map"><i class="fa fa-map-o fa-fw"></i> Map</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    {% include 'ngozi/navigation.html' %}
 
     <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading"><strong>Ngozi Okafor</strong><br>and<br><strong>Adonis Bovell</strong></h1>
-                        <p class="intro-text heading-text">Share this moment with us.</p>
-                        <a href="#details" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    {% include 'ngozi/panels/intro.html' %}
 
     <!-- Detail Section -->
-    <section id="details" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div class="panel-background">
-                    <h2 class="section-heading">Details</h2>
-                    <p>Chief and Mrs. Eric Okafor</p>
-                    <p>and</p>
-                    <p>Ms. Adonia Bovell and Mr. Allan Winchester</p>
-                    <p>cordially invite you to the marriage of our children</p>
-                    <p class="name"><i>Ngozi and Adonis</i></p>
-                    <p>on</p>
-                    <p>Saturday, May 28, 2016</p>
-                    <p>at</p>
-                    <address>St. Bartholomew's Episcopal Church<br>
-                    1790 LaVista Rd NE, Atlanta, GA 30329 <a href="#map" class="page-scroll"> <i class="fa fa-map-o animated"></i></a></address>
-                    <p>CEREMONY 3:00 PM<br>
-                    RECEPTION 5:00 PM</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'ngozi/panels/details.html' %}
 
     <!-- RSVP Section -->
-    <section id="rsvp" class="content-section text-center">
-        <div class="picture-section">
-            <div class="container">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <div class="panel-background panel-transparent panel-spacer">
-                        <div id="rsvp-div">
-                            <h2 class="section-heading">RSVP</h2>
-                            <p>Please let us know if you will be able to attend.</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a onclick="display_rsvp_modal()" class="btn btn-default btn-lg"><span class="network-name">RSVP</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'ngozi/panels/rsvp.html' %}
 
-    <!-- Contact Section -->
-    <section id="registry" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div class="panel-background">
-                    <h2 class="section-heading">Registry</h2>
-                    <p>We are registered at the following stores:</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://www.amazon.com/gp/registry/wedding/3TB0LIY9WQB7X" class="btn btn-default btn-lg"><i class="fa fa-amazon fa-fw"></i> <span class="network-name">Amazon</span></a>
-                        </li>
-                        <li>
-                            <a href="http://www1.macys.com/registry/wedding/guest/?registryId=6539892" class="btn btn-default btn-lg"><i class="fa fa-star fa-fw"></i> <span class="network-name">MACY'S</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Registry Section -->
+    {% include 'ngozi/panels/registry.html' %}
 
     <!-- Map Section -->
     <div id="map"></div>
@@ -166,24 +30,7 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'js/cookie.js' %}"></script>
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="{% static 'js/grayscale.js' %}"></script>
-
-    <!-- api JavaScript -->
-    <script src="{% static 'js/api.js' %}"></script>
+    {% include 'ngozi/scripts.html' %}
 
     {% include 'ngozi/modal.html' %}
 </body>

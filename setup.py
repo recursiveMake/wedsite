@@ -6,7 +6,7 @@ setup(
     # GETTING-STARTED: set your app name:
     name='ngozi',
     # GETTING-STARTED: set your app version:
-    version='1.0',
+    version='1.1',
     # GETTING-STARTED: set your app description:
     description='Ngozi and Adonis tie the knot',
     # GETTING-STARTED: set author name (your name):
