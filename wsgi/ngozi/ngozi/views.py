@@ -2,7 +2,6 @@ from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
