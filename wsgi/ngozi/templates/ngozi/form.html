@@ -14,10 +14,9 @@
                         {% for error in field.errors %}
                             {{ error }}<br>
                         {% endfor %}
-                        {{ field.help_text }}
                         </span>
                     {% else %}
-                        <span class="help-block">{{ field.help_text }}</span>
+                        <span class="help-block"><small>{{ field.help_text }}</small></span>
                     {% endif %}
                 </div>
             </div>
